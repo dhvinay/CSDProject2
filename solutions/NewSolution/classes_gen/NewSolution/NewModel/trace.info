@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:61c69711-ed61-4850-81d9-7714ff227fb0/6610873504380029780:com.mbeddr.core.expressions.structure.CastExpression" />
+  <concept fqn="c:61c69711-ed61-4850-81d9-7714ff227fb0/5763383285156373022:com.mbeddr.core.expressions.structure.DivExpression" />
+  <concept fqn="c:61c69711-ed61-4850-81d9-7714ff227fb0/5763383285156373018:com.mbeddr.core.expressions.structure.MinusExpression" />
+  <concept fqn="c:61c69711-ed61-4850-81d9-7714ff227fb0/5763383285156373020:com.mbeddr.core.expressions.structure.MultiExpression" />
+  <concept fqn="c:61c69711-ed61-4850-81d9-7714ff227fb0/8860443239512128103:com.mbeddr.core.expressions.structure.NumberLiteral" />
+  <concept fqn="c:61c69711-ed61-4850-81d9-7714ff227fb0/5763383285156533447:com.mbeddr.core.expressions.structure.ParensExpression" />
+  <concept fqn="c:61c69711-ed61-4850-81d9-7714ff227fb0/5763383285156373013:com.mbeddr.core.expressions.structure.PlusExpression" />
+  <concept fqn="c:6d11763d-483d-4b2b-8efc-09336c1b0001/8934095934011938595:com.mbeddr.core.modules.structure.EmptyModuleContent" />
+  <concept fqn="c:6d11763d-483d-4b2b-8efc-09336c1b0001/3788988821851860886:com.mbeddr.core.modules.structure.GlobalConstantDeclaration" />
+  <concept fqn="c:6d11763d-483d-4b2b-8efc-09336c1b0001/6021475212425916971:com.mbeddr.core.modules.structure.GlobalConstantFunctionDeclaration" />
+  <concept fqn="c:6d11763d-483d-4b2b-8efc-09336c1b0001/7308356872494660981:com.mbeddr.core.modules.structure.GlobalConstantFuntionArgumentRef" />
+  <concept fqn="c:efda956e-491e-4f00-ba14-36af2f213ecf/6116558314501347857:com.mbeddr.core.udt.structure.TypeDef" />
+  <root nodeRef="3c4eda0f-1c8d-4cd3-b50a-5e3b5354aa39/r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib/ClaStdLib)/3623788340900970045">
+    <file name="Cla_CommonUnits.c">
+      <node id="8340044428335368199" at="5,0,6,0" concept="7" />
+      <node id="6456666279511775373" at="7,0,8,0" concept="7" />
+      <node id="6456666279511231858" at="9,0,10,0" concept="7" />
+      <node id="3623788340900970098" at="11,0,12,0" concept="7" />
+      <node id="3623788340900970112" at="13,0,14,0" concept="7" />
+      <node id="3623788340900970142" at="15,0,16,0" concept="7" />
+      <node id="3623788340900970183" at="17,0,18,0" concept="7" />
+      <node id="8340044428335702845" at="19,0,20,0" concept="7" />
+      <unit id="3623788340900970045" at="1,0,21,0" name="NewSolution.NewModel.Cla_CommonUnits" />
+    </file>
+    <file name="Cla_CommonUnits.h">
+      <node id="6456666279511242244" at="17,0,17,38" concept="9" />
+      <node id="6456666279511271776" at="17,25,17,30" concept="5" />
+      <node id="6456666279511271820" at="17,25,17,37" concept="1" />
+      <node id="6456666279511271776" at="17,26,17,29" concept="10" />
+      <node id="6456666279511271827" at="17,33,17,37" concept="4" />
+      <node id="6456666279511282464" at="18,0,18,38" concept="9" />
+      <node id="6456666279511312830" at="18,25,18,30" concept="5" />
+      <node id="6456666279511312855" at="18,25,18,37" concept="3" />
+      <node id="6456666279511312830" at="18,26,18,29" concept="10" />
+      <node id="6456666279511312862" at="18,33,18,37" concept="4" />
+      <node id="3623788340900970048" at="19,0,19,62" concept="9" />
+      <node id="3623788340900970054" at="19,31,19,36" concept="5" />
+      <node id="3623788340900970052" at="19,31,19,55" concept="3" />
+      <node id="3623788340900970050" at="19,31,19,61" concept="1" />
+      <node id="3623788340900970054" at="19,32,19,35" concept="10" />
+      <node id="3623788340900970053" at="19,39,19,55" concept="4" />
+      <node id="3623788340900970051" at="19,58,19,61" concept="4" />
+      <node id="3623788340900970057" at="20,0,20,62" concept="9" />
+      <node id="3623788340900970063" at="20,31,20,36" concept="5" />
+      <node id="3623788340900970061" at="20,31,20,42" concept="3" />
+      <node id="3623788340900970059" at="20,31,20,61" concept="1" />
+      <node id="3623788340900970063" at="20,32,20,35" concept="10" />
+      <node id="3623788340900970062" at="20,39,20,42" concept="4" />
+      <node id="3623788340900970060" at="20,45,20,61" concept="4" />
+      <node id="3623788340900970066" at="21,0,21,43" concept="9" />
+      <node id="3623788340900970070" at="21,31,21,36" concept="5" />
+      <node id="3623788340900970068" at="21,31,21,42" concept="1" />
+      <node id="3623788340900970070" at="21,32,21,35" concept="10" />
+      <node id="3623788340900970069" at="21,39,21,42" concept="4" />
+      <node id="3623788340900970073" at="22,0,22,56" concept="9" />
+      <node id="3623788340900970080" at="22,31,22,36" concept="5" />
+      <node id="3623788340900970075" at="22,31,22,55" concept="1" />
+      <node id="3623788340900970080" at="22,32,22,35" concept="10" />
+      <node id="3623788340900970077" at="22,39,22,55" concept="4" />
+      <node id="3623788340900970083" at="23,0,23,43" concept="9" />
+      <node id="3623788340900970087" at="23,31,23,36" concept="5" />
+      <node id="3623788340900970085" at="23,31,23,42" concept="3" />
+      <node id="3623788340900970087" at="23,32,23,35" concept="10" />
+      <node id="3623788340900970086" at="23,39,23,42" concept="4" />
+      <node id="3623788340900970090" at="24,0,24,56" concept="9" />
+      <node id="3623788340900970097" at="24,31,24,36" concept="5" />
+      <node id="3623788340900970092" at="24,31,24,55" concept="3" />
+      <node id="3623788340900970097" at="24,32,24,35" concept="10" />
+      <node id="3623788340900970094" at="24,39,24,55" concept="4" />
+      <node id="3623788340900970100" at="25,0,25,40" concept="9" />
+      <node id="3623788340900970104" at="25,29,25,34" concept="5" />
+      <node id="3623788340900970102" at="25,29,25,39" concept="3" />
+      <node id="3623788340900970104" at="25,30,25,33" concept="10" />
+      <node id="3623788340900970103" at="25,37,25,39" concept="4" />
+      <node id="3623788340900970107" at="26,0,26,40" concept="9" />
+      <node id="3623788340900970111" at="26,29,26,34" concept="5" />
+      <node id="3623788340900970109" at="26,29,26,39" concept="1" />
+      <node id="3623788340900970111" at="26,30,26,33" concept="10" />
+      <node id="3623788340900970110" at="26,37,26,39" concept="4" />
+      <node id="3623788340900970114" at="27,0,27,63" concept="9" />
+      <node id="3623788340900970126" at="27,33,27,38" concept="5" />
+      <node id="3623788340900970121" at="27,33,27,57" concept="3" />
+      <node id="3623788340900970116" at="27,33,27,62" concept="1" />
+      <node id="3623788340900970126" at="27,34,27,37" concept="10" />
+      <node id="3623788340900970123" at="27,41,27,57" concept="4" />
+      <node id="3623788340900970118" at="27,60,27,62" concept="4" />
+      <node id="3623788340900970129" at="28,0,28,63" concept="9" />
+      <node id="3623788340900970141" at="28,33,28,38" concept="5" />
+      <node id="3623788340900970136" at="28,33,28,43" concept="3" />
+      <node id="3623788340900970131" at="28,33,28,62" concept="1" />
+      <node id="3623788340900970141" at="28,34,28,37" concept="10" />
+      <node id="3623788340900970138" at="28,41,28,43" concept="4" />
+      <node id="3623788340900970133" at="28,46,28,62" concept="4" />
+      <node id="3623788340900970144" at="29,0,29,53" concept="9" />
+      <node id="3623788340900970161" at="29,30,29,35" concept="5" />
+      <node id="3623788340900970156" at="29,30,29,39" concept="3" />
+      <node id="3623788340900970151" at="29,30,29,43" concept="1" />
+      <node id="3623788340900970146" at="29,30,29,52" concept="6" />
+      <node id="3623788340900970161" at="29,31,29,34" concept="10" />
+      <node id="3623788340900970158" at="29,38,29,39" concept="4" />
+      <node id="3623788340900970153" at="29,42,29,43" concept="4" />
+      <node id="3623788340900970148" at="29,46,29,52" concept="4" />
+      <node id="3623788340900970164" at="30,0,30,55" concept="9" />
+      <node id="3623788340900970176" at="30,30,30,46" concept="5" />
+      <node id="3623788340900970171" at="30,30,30,50" concept="3" />
+      <node id="3623788340900970166" at="30,30,30,54" concept="1" />
+      <node id="3623788340900970182" at="30,31,30,36" concept="5" />
+      <node id="3623788340900970177" at="30,31,30,45" concept="2" />
+      <node id="3623788340900970182" at="30,32,30,35" concept="10" />
+      <node id="3623788340900970179" at="30,39,30,45" concept="4" />
+      <node id="3623788340900970173" at="30,49,30,50" concept="4" />
+      <node id="3623788340900970168" at="30,53,30,54" concept="4" />
+      <node id="3623788340900970185" at="31,0,31,41" concept="9" />
+      <node id="3623788340900970189" at="31,28,31,33" concept="5" />
+      <node id="3623788340900970187" at="31,28,31,40" concept="1" />
+      <node id="3623788340900970189" at="31,29,31,32" concept="10" />
+      <node id="3623788340900970188" at="31,36,31,40" concept="4" />
+      <node id="3623788340900970192" at="32,0,32,41" concept="9" />
+      <node id="3623788340900970196" at="32,28,32,33" concept="5" />
+      <node id="3623788340900970194" at="32,28,32,40" concept="3" />
+      <node id="3623788340900970196" at="32,29,32,32" concept="10" />
+      <node id="3623788340900970195" at="32,36,32,40" concept="4" />
+      <node id="3623788340900970199" at="33,0,33,48" concept="9" />
+      <node id="3623788340900970204" at="33,28,33,33" concept="5" />
+      <node id="3623788340900970202" at="33,28,33,40" concept="1" />
+      <node id="3623788340900970200" at="33,28,33,47" concept="1" />
+      <node id="3623788340900970204" at="33,29,33,32" concept="10" />
+      <node id="3623788340900970203" at="33,36,33,40" concept="4" />
+      <node id="3623788340900970201" at="33,43,33,47" concept="4" />
+      <node id="3623788340900970208" at="34,0,34,48" concept="9" />
+      <node id="3623788340900970213" at="34,28,34,33" concept="5" />
+      <node id="3623788340900970211" at="34,28,34,40" concept="3" />
+      <node id="3623788340900970209" at="34,28,34,47" concept="3" />
+      <node id="3623788340900970213" at="34,29,34,32" concept="10" />
+      <node id="3623788340900970212" at="34,36,34,40" concept="4" />
+      <node id="3623788340900970210" at="34,43,34,47" concept="4" />
+      <node id="8340044428335434672" at="35,0,35,43" concept="9" />
+      <node id="8340044428335471641" at="35,30,35,35" concept="5" />
+      <node id="8340044428335471665" at="35,30,35,42" concept="1" />
+      <node id="8340044428335471641" at="35,31,35,34" concept="10" />
+      <node id="8340044428335471672" at="35,38,35,42" concept="4" />
+      <node id="8340044428335521277" at="36,0,36,50" concept="9" />
+      <node id="8340044428335549547" at="36,30,36,35" concept="5" />
+      <node id="8340044428335550607" at="36,30,36,42" concept="1" />
+      <node id="8340044428335550606" at="36,30,36,49" concept="1" />
+      <node id="8340044428335549547" at="36,31,36,34" concept="10" />
+      <node id="8340044428335550608" at="36,38,36,42" concept="4" />
+      <node id="8340044428335550611" at="36,45,36,49" concept="4" />
+      <node id="8340044428335481866" at="37,0,37,43" concept="9" />
+      <node id="8340044428335510062" at="37,30,37,35" concept="5" />
+      <node id="8340044428335510737" at="37,30,37,42" concept="3" />
+      <node id="8340044428335510062" at="37,31,37,34" concept="10" />
+      <node id="8340044428335510744" at="37,38,37,42" concept="4" />
+      <node id="8340044428335603010" at="38,0,38,44" concept="9" />
+      <node id="8340044428335632358" at="38,31,38,36" concept="5" />
+      <node id="8340044428335632382" at="38,31,38,43" concept="1" />
+      <node id="8340044428335632358" at="38,32,38,35" concept="10" />
+      <node id="8340044428335632389" at="38,39,38,43" concept="4" />
+      <node id="8340044428335562442" at="39,0,39,50" concept="9" />
+      <node id="8340044428335590945" at="39,30,39,35" concept="5" />
+      <node id="8340044428335592300" at="39,30,39,42" concept="3" />
+      <node id="8340044428335592299" at="39,30,39,49" concept="3" />
+      <node id="8340044428335590945" at="39,31,39,34" concept="10" />
+      <node id="8340044428335592301" at="39,38,39,42" concept="4" />
+      <node id="8340044428335592304" at="39,45,39,49" concept="4" />
+      <node id="8340044428335642776" at="40,0,40,44" concept="9" />
+      <node id="8340044428335672453" at="40,31,40,36" concept="5" />
+      <node id="8340044428335672477" at="40,31,40,43" concept="3" />
+      <node id="8340044428335672453" at="40,32,40,35" concept="10" />
+      <node id="8340044428335672484" at="40,39,40,43" concept="4" />
+    </file>
+  </root>
+  <root nodeRef="r:679066bc-2da8-4932-a09c-5d2b3d47b911(com.mbeddr.ext.units.siunits)/624957442821420128">
+    <file name="SIUnits.c">
+      <node id="3156023081155848046" at="5,0,6,0" concept="7" />
+      <unit id="624957442821420128" at="1,0,7,0" name="NewSolution.NewModel.SIUnits" />
+    </file>
+  </root>
+  <root nodeRef="r:9dd3d0c0-fe77-4c17-b80a-fd26180df653(NewSolution.NewModel)/1989950467386446741">
+    <file name="NewImplModule.c">
+      <unit id="1989950467386446741" at="1,0,5,0" name="NewSolution.NewModel.NewImplModule" />
+    </file>
+    <file name="NewImplModule.h">
+      <node id="7077315457911352484" at="17,0,17,26" concept="11" />
+    </file>
+  </root>
+  <root nodeRef="r:9dd3d0c0-fe77-4c17-b80a-fd26180df653(NewSolution.NewModel)/7077315457911352596">
+    <file name="cg.c">
+      <unit id="7077315457911352596" at="1,0,6,0" name="NewSolution.NewModel.cg" />
+    </file>
+    <file name="cg.h">
+      <node id="7077315457911352596" at="19,0,19,44" concept="8" />
+      <node id="7077315457911352596" at="19,24,19,43" concept="0" />
+      <node id="7077315457911357750" at="19,39,19,41" concept="4" />
+    </file>
+  </root>
+  <root nodeRef="r:9dd3d0c0-fe77-4c17-b80a-fd26180df653(NewSolution.NewModel)/7077315457911353115">
+    <file name="new.c">
+      <unit id="7077315457911353115" at="1,0,6,0" name="NewSolution.NewModel.new" />
+    </file>
+    <file name="new.h">
+      <node id="7077315457911353115" at="19,0,19,75" concept="11" />
+      <node id="7077315457911353115" at="20,0,20,61" concept="11" />
+    </file>
+  </root>
+</debug-info>
+

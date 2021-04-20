@@ -1,0 +1,154 @@
+history.txt                    GD Library                      AGCO GmbH - FENDT
+--------------------------------------------------------------------------------
+Version v0.24 (xxxx-xx-xx):
+===========================
+- [MISC] changed command responses for GD-mirror.
+- [MISC] added comments in GD-mirror
+- [BUG-7243] fixed Bug: missing responses after ignition went on
+- [Misc] changed MSG_ENV_TYPE_GD from 0x31 to 0x41 (for message envelope/header).
+
+Version v0.23 (2016-03-04):
+===========================
+- [PB-11396] added basic functionality for "GD mirroring" to enable debugging of internally
+  sent messages.
+- [PB-11648] bugfixing and extension of mirror function
+- [PB-12063] added variable in init structure to have influence on gdIsAlive_b()-behavior after KL15 off
+
+Version v0.22 (2015-12-09):
+===========================
+- [PB-10478] replaced all void pointers (former PxArg_t) types by uint32.
+  It was assumed by mistake that the type PxArg_t is equivalent to a void pointer.
+  PxArg_t is just a 4 byte value like uint32.
+- [BUG-7051] fixed: if the same index is requested by different nodes in a short time, 
+  responses to requesting task failed sometimes. 
+- [BUG-7096]: reset internal states, if request or immediate write on bus fails
+
+Version v0.21 (2015-10-12):
+===========================
+- [PB-10478] replaced FreeRTOS by OsWrapper (MPU ready).
+  Replaced bool by boolean.
+
+Version v0.20 (2015-06-15):
+===========================
+- [BUG-6255] now repeating control messages in case of CAN-FIFO is overfull
+
+Version v0.19 (2015-05-11):
+===========================
+- [BUG-6223] request/response-table sized up for tricore
+- [BUG-6224] request/response-table are now variable in size. Memory for tables is allocated outside library.
+
+Version v0.18 (2015-04-28):
+===========================
+- [BUG-6165] Blocktransfer with variable length
+
+Version v0.17 (2015-04-08):
+===========================
+- [BUG-5964] function added to prevent responses from a logged off logical node. Needed to ensure, 
+  that nodes doesn't wake up each other after logoff.                
+
+Version v0.16 (2015-03-17):
+===========================
+- [Misc] added missing call gdBlkTrfRemoveIndexRequestOfLogicalNode() 
+  in function handle_new_response_jobs() 
+- [Misc] response/request- and routing-table shifted to .bss_dmuram
+
+Version v0.15 (2014-02-28):
+===========================
+- [PB-7043] added gd-blocktransfer to GD-Lib. 
+- fuer Hysterese nach unten den richtigen Wert verwenden [BUG-4550]
+  und dafuer sorgen dass Vergleichswert (Hysterese) nicht ueberlaeuft
+- Funkionen fuer ECRR Requests mit absoluter Hysterese hinzugefuegt [PB-6108]
+- [Misc] increased stack size of FreeRTOS/Cortex-M3 GD-Task to 1kByte (sporadic resets of zek)
+
+Version v0.14 (2013-12-05):
+===========================
+- auf Logoff-Botschaften nur reagieren, wenn der vermeindliche Absender
+  sich nicht in der eigenen physikalischen Einheit befindet [BUG-4449]
+
+Version v0.13 (2013-07-30):
+===========================
+- einen moeglichen Fehler (Rueckgabewert) der Funktion PxMsgSend() zurueckgeben
+- ImmWrites ohne Handshake koennen intern sofort versendet werden,
+  sobald der Zielteilnehmer einen logon() durchgefuehrt hat [BUG-4015]
+  (d.h. bereits wenn int_alive_status == LOGON_1, LOGON_2 oder LOGON_3)
+
+Version v0.12 (2013-07-23):
+===========================
+- [PB-6278] PxBcopy ersetzt durch memcpy, dementsprechend Headerfiles angepasst.
+  index in index_u16 umbenannt um globale Deklaration in string.h nicht
+  zu ueberdecken.
+  Briefumschlag eingefuehrt (USE_MSG_ENVELOPE) fuer FreeRTOS.
+
+Version v0.11 (2013-05-08):
+===========================
+- Optimierung der Stuktur der Request- und Responsetabelle [PB-4822]
+  (ein Eintrag benoetigt nun statt 32 Byte nur noch 24 Byte)
+- Verkettete Liste Alive-Msg.ueberwachung/-ausgabe entfernt
+  d.h. kein dynamisch allocierter Speicher mehr fuer die Listenelemente
+  dafuer erfolgt der Zugriff mit FOR-Schleife auf die Routing-Table
+- Zeitstempel timestamp_u32 nicht unberechtigt auf "Fehler" setzen [BUG-3480]
+- Funktion gdxKillRequest_s32() eingefuegt [PB-3991]
+  (notwendig wenn fuer Anfrage gdxSendRequest*RR_s32() verwendet wird)
+
+Version v0.10 (2013-02-15):
+===========================
+- Anzahl der Requesteintraege in LPC Bibliotheken von 20 auf 30 erhoeht
+- fuer TriCore Bibliothek Compilerversion v3.4.7.3 verwenden
+- Reaktion auf WRITE_ERROR auch bei REQ/RESPTABLE_FULL und ALIVE_FAIL [BUG-3210]
+- Diagnosestatus um "Tabellen voll Index" erweitert [PB-3423]
+
+Version v0.09 (2012-07-05):
+===========================
+- die Zaehlvariablen zur Durchlaufoptimierung (nmax_req/resp_entries)
+  beim Eintragen neuer Daten aktualisieren [BUG-2314]
+- Bei Response auf "ECRR_w_HS" auf Handshake nicht vergessen,
+  auch wenn der Inhalt der Botschaft nichts neues bringt [BUG-1431]
+- Funktion zur Abfrage des Diagnosestatus (GD) [PB-3971]
+- Typedefs fuer Pointer auf Strukturen entfernt
+- Anzahl der Responseeintraege in TriCore Bibliothek von 300 auf 400 erhoeht
+
+Version v0.08 (2011-09-08):
+===========================
+- Unberechtigtes Ueberschreiben eines ImmWrite-Eintrags in der Responsetabelle
+  durch neue Response Daten abfangen [BUG-1356]
+- Anzahl der Responseeintraege in TriCore Bibliothek zurueck auf 300 Eintraege
+
+Version v0.07 (2011-03-21):
+===========================
+- ImmWrites ohne Handshake von extern in einem Zyklus weitergeben
+- Anzahl der Responseeintraege in TriCore Bibliothek von 300 auf 400 erhoeht
+- Aufruf der Emulationsbibliothek vermeiden (MULDIV)
+
+Version v0.06 (2010-11-30):
+===========================
+- Bug bei Einzelanfrage (SRR) gefixed
+
+Version v0.05 (2010-06-08):
+===========================
+- Init-Struktur um die Parameter Strangnummer (segment) und CAN-Bus-
+  nummer erweitert. Die verwendete Strang- und CAN-Busnummer koennen
+  ueber den Init-Aufruf konfiguriert werden.
+
+Version v0.04 (2010-04-08):
+==========================
+- Wert IOD_Undef aus enum IODiag_te entfernt (EOS)
+
+Version v0.03 (2010-03-22):
+===========================
+- Fehler bzgl. der Erkennung von unbekannten Indexen behoben
+
+Version v0.02 (2009-12-07):
+===========================
+- Fehler bzgl. Endlosschleife bei unbekanntem Index behoben
+
+Version v0.01 (2009-11-11):
+===========================
+- Compilerflags -O2 (Optimierung) und -fshort-enums (nur ARM)
+- Funktion CreateUsrtaskTbLim() ersetzt CreateSdttask()
+
+Version v0.00 (2009-09-28):
+===========================
+- Bibliotheken fuer Baugruppen mit LPC des X711 und EXT-Light fuer OEM erstellt
+
+--------------------------------------------------------------------------------
+history.txt                    GD Library                      AGCO GmbH - FENDT

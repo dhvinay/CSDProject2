@@ -1,0 +1,17 @@
+/* File: look2_iflf_binlca.h */
+
+#ifndef SHARE_look2_iflf_binlca
+#define SHARE_look2_iflf_binlca
+#include "rtwtypes.h"
+
+extern real32_T look2_iflf_binlca(real32_T u0, real32_T u1, const real32_T bp0[],
+  const real32_T bp1[], const real32_T table[], const uint32_T maxIndex[],
+  uint32_T stride);
+
+#endif
+
+/*
+ * File trailer for generated code.
+ *
+ * [EOF]
+ */

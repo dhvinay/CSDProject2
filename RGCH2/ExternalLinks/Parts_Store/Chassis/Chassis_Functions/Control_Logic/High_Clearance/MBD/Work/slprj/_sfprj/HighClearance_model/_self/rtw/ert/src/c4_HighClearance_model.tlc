@@ -1,0 +1,130 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   16 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "is_active_c4_HighClearance_model"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_states"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "states"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "states.active"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "was_active"\
+      Description  "StatePrevActiveChild"\
+      SFName       ""\
+      Path         "states.active"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_transitioning"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "states.active.transitioning"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "was_transitioning"\
+      Description  "StatePrevActiveChild"\
+      SFName       ""\
+      Path         "states.active.transitioning"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "prevTargetState"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "prevTargetState"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "stopBtn_prev"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "stopBtn"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "stopBtn_start"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "stopBtn"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "upBtn_prev"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "upBtn"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "upBtn_start"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "upBtn"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "downBtn_prev"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "downBtn"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "downBtn_start"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "downBtn"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "engRunning_prev"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "engRunning"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "engRunning_start"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "engRunning"\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

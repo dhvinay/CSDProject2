@@ -1,0 +1,211 @@
+### Starting build procedure for model: HighClearance_model
+### Generating code and artifacts to 'Model specific' folder structure
+### Generating code into build folder: C:\Dev\Chassis_Development\RGCH2\ExternalLinks\Parts_Store\Chassis\Chassis_Functions\Control_Logic\High_Clearance\MBD\Work\HighClearance_model_ert_rtw
+[Warning: Model '<a href="matlab:open_system ('HighClearance_model')">HighClearance_model</a>' has underspecified signal
+dimensions and Simulink has assigned these dimensions by default.
+To prevent ambiguities, consider specifying these dimensions in
+the block dialog box. Alternatively, add 'Signal Specification'
+blocks as necessary. Simulink has assigned these signal
+dimensions:
+    •Block
+    '<a href="matlab:open_and_hilite_hyperlink ('HighClearance_model/Calibration/controlLogic/grounds/Ground','error')">HighClearance_model/Calibration/controlLogic/grounds/Ground</a>'
+    output port 1 has been set to [1].
+To turn off this message, set <a href="matlab:configset.internal.open('HighClearance_model','UnderSpecifiedDimensionMsg');">Underspecified dimensions</a> to 'none'.
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 1678)">'heightCalibrating_e'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(1678)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 1752)">'heightUp_e'</a> is defined, but is never used in
+the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(1752)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 1753)">'heightMovingDown_e'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(1753)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 1754)">'heightDown_e'</a> is defined, but is never used
+in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(1754)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 1755)">'heightMovingUp_e'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(1755)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 1756)">'heightError_e'</a> is defined, but is never used
+in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(1756)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 1904)">'targetState'</a> is defined, but is never used in
+the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(1904)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 2002)">'heightCalibrating_e'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(2002)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 2003)">'heightError_e'</a> is defined, but is never used
+in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(2003)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 2004)">'heightUnknown_e'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(2004)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 2036)">'heightDown_e'</a> is defined, but is never used
+in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(2036)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 2037)">'heightUp_e'</a> is defined, but is never used in
+the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(2037)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 2040)">'heightCalibrating_e'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(2040)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 2041)">'heightError_e'</a> is defined, but is never used
+in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(2041)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 2042)">'heightUnknown_e'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(2042)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 2043)">'trackWidthTolerance'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(2043)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 2044)">'heightDiffTolerance'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(2044)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 377)">'legState'</a> is defined, but is never used in
+the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(377)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 378)">'heightUp_e'</a> is defined, but is never used in
+the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(378)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 379)">'heightDown_e'</a> is defined, but is never used
+in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(379)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 381)">'heightUnknown_e'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(381)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 423)">'heightCalibrating_e'</a> is defined, but is
+never used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(423)">Delete this data/event</a>. You
+can also configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 424)">'heightError_e'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(424)">Delete this data/event</a>. You can
+also configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 425)">'heightUnknown_e'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(425)">Delete this data/event</a>. You can
+also configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 1050)">'twoWheelSteer'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(1050)">Delete this data/event</a>. You can
+also configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 1065)">'ccoEnableDiag'</a> is defined, but is never
+used in the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(1065)">Delete this data/event</a>. You can
+also configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 1077)">'IOD_Open'</a> is defined, but is never used in
+the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(1077)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Data/Event <a href="matlab:sf('Open', 1078)">'IOD_ScGnd'</a> is defined, but is never used in
+the Stateflow chart. <a href= "matlab: internal.stateflow.dialogs.UnusedObjectDeleter.createDeleter(1078)">Delete this data/event</a>. You can also
+configure the diagnostic by clicking <a href= "matlab: sfprivate('openConfigParamsSFDiagnostics',20)">here</a>.
+
+] 
+[Warning: Unnecessary Data Type Conversion
+'<a href="matlab:open_and_hilite_hyperlink ('HighClearance_model/Calibration/controlLogic/grounds/Data Type Conversion','error')">HighClearance_model/Calibration/controlLogic/grounds/Data Type
+Conversion</a>'. The input and output data types are the same] 
+[Warning: Unnecessary Data Type Conversion
+'<a href="matlab:open_and_hilite_hyperlink ('HighClearance_model/Calibration/controlLogic/grounds/Data Type Conversion1','error')">HighClearance_model/Calibration/controlLogic/grounds/Data Type
+Conversion1</a>'. The input and output data types are the same] 
+[Warning: Unnecessary Data Type Conversion
+'<a href="matlab:open_and_hilite_hyperlink ('HighClearance_model/Calibration/controlLogic/grounds/Data Type Conversion2','error')">HighClearance_model/Calibration/controlLogic/grounds/Data Type
+Conversion2</a>'. The input and output data types are the same] 
+[Warning: Unnecessary Data Type Conversion
+'<a href="matlab:open_and_hilite_hyperlink ('HighClearance_model/Calibration/controlLogic/grounds/Data Type Conversion3','error')">HighClearance_model/Calibration/controlLogic/grounds/Data Type
+Conversion3</a>'. The input and output data types are the same] 
+[Warning: Unnecessary Data Type Conversion
+'<a href="matlab:open_and_hilite_hyperlink ('HighClearance_model/Calibration/stateLogic/grounds/Data Type Conversion','error')">HighClearance_model/Calibration/stateLogic/grounds/Data Type
+Conversion</a>'. The input and output data types are the same] 
+[Warning: Unnecessary Data Type Conversion
+'<a href="matlab:open_and_hilite_hyperlink ('HighClearance_model/Calibration/stateLogic/grounds/Data Type Conversion1','error')">HighClearance_model/Calibration/stateLogic/grounds/Data Type
+Conversion1</a>'. The input and output data types are the same] 
+[Warning: Unnecessary Data Type Conversion
+'<a href="matlab:open_and_hilite_hyperlink ('HighClearance_model/Calibration/stateLogic/grounds/Data Type Conversion2','error')">HighClearance_model/Calibration/stateLogic/grounds/Data Type
+Conversion2</a>'. The input and output data types are the same] 
+[Warning: Unnecessary Data Type Conversion
+'<a href="matlab:open_and_hilite_hyperlink ('HighClearance_model/Calibration/stateLogic/grounds/Data Type Conversion3','error')">HighClearance_model/Calibration/stateLogic/grounds/Data Type
+Conversion3</a>'. The input and output data types are the same] 
+### Invoking Target Language Compiler on HighClearance_model.rtw
+### Using System Target File: C:\Program Files\MATLAB\R2019b\rtw\c\ert\ert.tlc
+### Loading TLC function libraries
+........
+### Generating TLC interface API for custom data
+....................
+### Initial pass through model to cache user defined code
+..................
+### Caching model source code
+...............................................................................
+...............................................................................
+...............................................................................
+...............................................................................
+...............................................................................
+...............................................................................
+...............................................................................
+...............................................................................
+.....................
+### Writing header file HighClearance_model.h
+### Writing source file HighClearance_model.c
+### Writing source file C:\Dev\Chassis_Development\RGCH2\ExternalLinks\Parts_Store\Chassis\Chassis_Functions\Control_Logic\High_Clearance\MBD\Work\slprj\ert\_sharedutils\look1_iflf_binlca.c
+.
+### Writing header file C:\Dev\Chassis_Development\RGCH2\ExternalLinks\Parts_Store\Chassis\Chassis_Functions\Control_Logic\High_Clearance\MBD\Work\slprj\ert\_sharedutils\look1_iflf_binlca.h
+### Writing header file rtwtypes.h
+### Writing header file rtmodel.h
+### TLC code generation complete.
+.......### Creating HTML report file <a href="matlab:rtw.report.open('HighClearance_model','C:\Dev\Chassis_Development\RGCH2\ExternalLinks\Parts_Store\Chassis\Chassis_Functions\Control_Logic\High_Clearance\MBD\Work\HighClearance_model_ert_rtw')">HighClearance_model_codegen_rpt.html</a>
+### Using toolchain: Microsoft Visual C++ 2015 v14.0 | nmake (64-bit Windows)
+### Creating 'C:\Dev\Chassis_Development\RGCH2\ExternalLinks\Parts_Store\Chassis\Chassis_Functions\Control_Logic\High_Clearance\MBD\Work\slprj\ert\_sharedutils\rtwshared.mk' ...
+### Using toolchain: Microsoft Visual C++ 2015 v14.0 | nmake (64-bit Windows)
+### Creating 'C:\Dev\Chassis_Development\RGCH2\ExternalLinks\Parts_Store\Chassis\Chassis_Functions\Control_Logic\High_Clearance\MBD\Work\HighClearance_model_ert_rtw\HighClearance_model.mk' ...
+### Successful completion of code generation for model: HighClearance_model
+### Simulink cache artifacts for 'HighClearance_model' were created in 'C:\Dev\Chassis_Development\RGCH2\ExternalLinks\Parts_Store\Chassis\Chassis_Functions\Control_Logic\High_Clearance\MBD\Work\HighClearance_model.slxc'.

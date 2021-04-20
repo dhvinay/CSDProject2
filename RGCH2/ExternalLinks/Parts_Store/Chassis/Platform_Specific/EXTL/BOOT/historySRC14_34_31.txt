@@ -1,0 +1,160 @@
+History Bootloader SRC14_34_31
+==============================
+
+2014-09-25 BtEXTM0.11FEN/BtEXTM0.11AGC/BtEXTM0.11AG1/BtEXTM0.11AG2
+------------------------------------------------------------------
+- [PB-8547] Used Bosch Core for B samples
+  - Module/SRC14_34_31/coreinitSRC14_34_31.c
+- [PB-8548] Changed IO tables for B samples
+  - Module/SRC14_34_31/kwp_io_groupsSRC14_34_31.c
+- [PB-8549] Application string detection:
+  KWP-ID 0x1D - "AGCO"
+  KWP-ID 0x1B - "CHS_"
+  KWP-ID 0x1C - "BIN_"
+  KWP-ID 0x47 - "V_X2B" "V_EX4B"
+  GD-Logoff (only 0x47):
+  GD_TN_MC
+  GD_TN_GTR
+  GD_TN_KMF
+  GD_TN_HZW
+  GD_TN_FZW
+  GD_TN_HKH
+  GD_TN_FKH
+  GD_TN_EV
+  GD_TN_TIM
+  GD_TN_FED
+  GD_TN_AUTOMATIK
+  GD_TN_EJ
+  GD_TN_EHL
+  GD_TN_ISO
+  GD_TN_EDC_ERR_3B
+  GD_TN_EDC_ERR
+  GD_TN_EMM
+  - Module/gdLogoff.c
+
+- [BUG-4210] Removed subtick timestamp handling. It never worked
+  but caused delays in sending of consecutive frames.
+  [BUG-4210] Fixed handling of prot variables if sending of
+  consecutive frame failed. Previously the prot variables like
+  frame number and data index has been increased before checking
+  return code of CAN send (Florian Schwarz).
+    - Module/iso15765.c
+
+external libraries:
+Bosch CORE library SRC14_34_31_M20I2
+
+
+2014-11-17 BtEXTM0.12FEN/BtEXTM0.12AGC/BtEXTM0.12AG1/BtEXTM0.12AG2
+------------------------------------------------------------------
+- [BUG-5550] Use current value of STM.TIM0 for new
+  compare value. This will cause a skew in timer ticks
+  but we don't will hang if old comp value plus timer
+  tick is smaller than current TIM0 value (Suspended
+  ints during flashing). If new comp value was smaller
+  it took about 50 seconds until we got new timer
+  ticks resulting in expiring of external watchdog which
+  turned off outputs and CAN transceivers of CAN_2-CAN_4.
+  Reduced time between two calls to external watchdog from
+  about 40 mSec to 20 mSec to count down errorcounter of
+  external watchdog faster.
+  - Module/timer.c
+  - Module/extwdcy327.c
+
+- [BUG-5564] Stop for loop in function canRouteMsg_s32() with nRoutes_u8
+  instead of CAN_ROUTE_TABLE_SIZE. Using CAN_ROUTE_TABLE_SIZE won't work
+  if routing table is replaced with a smaller one because old entries will
+  still be active.
+  - Module/extwdcy327.c
+
+- [Misc] Moved version number and date from options.h back to version.c
+  for easier maintenance of bootloaders.
+  - Module/version.c
+  - Module/SRC4_5/options.h
+  - Module/SRC14_34_31/options.h
+  - Module/SRC36_20_31/options.h
+  - Module/SRC14_34_31/options.h
+
+external libraries:
+Bosch CORE library SRC14_34_31_M20I2
+
+
+2015-03-25 BtEXTM0.13.FEN/BtEXTM0.13AGC/BtEXTM0.13AG1/BtEXTM0.13AG2
+-------------------------------------------------------------------
+- [PB-9613] New application integrity check with CRC32 for single
+  or multiple flashblocks. Added needed addresses to linker script.
+  - Module/mchk_tc.c
+  - Module/mchk_tc.h
+  For backward compatibility with previous
+  applications the check for the first four letters is also kept.
+  See application porting guide for further details.
+  - Module/checkAppChksum.c
+  - Module/checkAppChksum.h
+  - Module/checkAppId.c
+  - Module/checkAppId.h
+  - Module/kwp_readEcuId.c
+  - Module/kwp2000.c
+  - Module/SRC14_34_31/options.h
+  Defined unique id for ECU and used seed&key mechanism as start
+  value for CRC32 calculation to avoid same crc result for every
+  application with same polynomial.
+  - Module/ecu_euidn.h
+  Added new adresses for application header with checksum block
+  table, EUIDN and CRC32 checksum.
+  - Projekt/SRC14_34_31.ld
+  
+- [PB-6575] Added code to verify VIN and services for reading (Fendt only)
+  and writint of VIN.
+  - Module/vin_verify.c
+  - Module/vin_verify.h
+  - Module/kwp2000.c
+  - Module/kwp2000.h
+  - Module/util.h
+  - Module/util.c
+  - Module/SRC14_34_31/options.h
+  
+- [Misc] Moved eep page size define to options.h.
+  - Module/SRC14_34_31/options.h
+  - Module/eeprom.c
+  
+external libraries:
+Bosch CORE library SRC14_34_31_M20K1
+
+
+2015-08-02 BtEXTM0.14.FEN/BtEXTM0.14AGC/BtEXTM0.14AG1/BtEXTM0.14AG2
+-------------------------------------------------------------------
+- [PB-10270] Core M20K13 for C-samples
+
+- [PB-10270] Changed io table for c-samples
+  - Module/SRC14_34_31/kwp_io_groupsSRC14_34_31.c
+
+- [BUG-6069] Only Fendt: Added logoff for Bordrechner (SRC36-20/31 / SRC14-34/31).
+  - Module/gdLogoff.c
+  - Module/gd_tn_xt.h
+
+external libraries:
+Bosch CORE library SRC14_34_31_M20K13
+
+
+2015-11-05 BtEXTM0.15FEN/BtEXTM0.15AGC/BtEXTM0.15AG1/BtEXTM0.15AG2
+------------------------------------------------------------------
+- [BUG-6979] Replaced M20K13 bosch core with M20K16. Configuration of tricore by
+  bootloader with M20K13 caused malfunction of ADC for application (G/LTC configuration?).
+ 
+- [BUG-6977] Only Fendt: Added faked GD logoff messages for TN 0x11 and TN 0x14 (SRC14-34/31).
+
+external libraries:
+Bosch CORE library SRC14_34_31_M20K16
+
+
+2016-04-07 BtEXTM0.16FEN/BtEXTM0.16AGC/BtEXTM0.16AG1/BtEXTM0.16AG2
+------------------------------------------------------------------
+- [PB-12143] Replaced M20K16 bosch core with M20K21.
+  - module/testcd_adapSRC14_34_31.c
+- [PB-12074] Changed service for partnumber to be compatible with Fendt G nummer
+  or AGCO global partnumber.
+  - module/kwp_readEcuId.c
+  - module/eep_addr.h
+
+external libraries:
+Bosch CORE library SRC14_34_31_M20K21
+

@@ -1,0 +1,160 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_:
+VAL_TABLE_ OnOff 1 "ON" 0 "OFF" ;
+
+
+BO_ 1287 dbgGdStatus2: 4 Vector__XXX
+ SG_ respNum : 16|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reqNum : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1286 dbgGdStatus1: 8 Vector__XXX
+ SG_ respMax : 48|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reqMax : 32|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ respEntriesID : 16|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reqEntriesID : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 291 dbgTime: 4 Vector__XXX
+ SG_ keepAlive : 0|32@1+ (0.1,0) [0|0] "[s]" Vector__XXX
+
+BO_ 1285 dbgLNAlive: 2 Vector__XXX
+ SG_ ln_4WS : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_EF : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_EMM : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_RG3 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_TA : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_SBL : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_WBZ : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_SCT : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_MI : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_ZE : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_Drive : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_ES : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ln_Dash : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1284 dbgErrorMessage: 3 Vector__XXX
+ SG_ errType : 15|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ errClass : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1283 dbgPxObj2: 8 Vector__XXX
+ SG_ MemMinCap : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ FreeMem : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1282 dbgPxObj1: 8 Vector__XXX
+ SG_ OPoolMinCap : 55|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ load : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ OPoolCap : 23|16@0+ (1,0) [0|0] "" Vector__XXX
+
+
+
+BA_DEF_ SG_  "SigType" ENUM  "Default","Range","RangeSigned","ASCII","Discrete","Control","ReferencePGN","DTC","StringDelimiter","StringLength","StringLengthControl";
+BA_DEF_ SG_  "GenSigEVName" STRING ;
+BA_DEF_ SG_  "GenSigILSupport" ENUM  "Yes","No";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","reserved","OnChange","reserved","reserved","reserved","NoSigSendType";
+BA_DEF_ SG_  "GenSigStartValue" INT 0 10000;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 1000;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "Yes","No";
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 100000;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "NmJ1939SystemInstance" INT 0 15;
+BA_DEF_ BU_  "NmJ1939System" INT 0 127;
+BA_DEF_ BU_  "NmJ1939ManufacturerCode" INT 0 2047;
+BA_DEF_ BU_  "NmJ1939IndustryGroup" INT 0 7;
+BA_DEF_ BU_  "NmJ1939IdentityNumber" INT 0 2097151;
+BA_DEF_ BU_  "NmJ1939FunctionInstance" INT 0 7;
+BA_DEF_ BU_  "NmJ1939Function" INT 0 255;
+BA_DEF_ BU_  "NmJ1939ECUInstance" INT 0 3;
+BA_DEF_ BU_  "NmJ1939AAC" INT 0 1;
+BA_DEF_ BU_  "NmStationAddress" INT 0 255;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","reserved","cyclicIfActive","reserved","reserved","reserved","reserved","reserved","noMsgSendType";
+BA_DEF_ BO_  "GenMsgRequestable" INT 0 1;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ SG_  "SPN" INT 0 524287;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "ProtocolType" STRING ;
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG";
+BA_DEF_DEF_  "SigType" "Default";
+BA_DEF_DEF_  "GenSigEVName" "Env@Nodename_@Signame";
+BA_DEF_DEF_  "GenSigILSupport" "Yes";
+BA_DEF_DEF_  "GenSigSendType" "NoSigSendType";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "NmJ1939SystemInstance" 0;
+BA_DEF_DEF_  "NmJ1939System" 0;
+BA_DEF_DEF_  "NmJ1939ManufacturerCode" 0;
+BA_DEF_DEF_  "NmJ1939IndustryGroup" 0;
+BA_DEF_DEF_  "NmJ1939IdentityNumber" 0;
+BA_DEF_DEF_  "NmJ1939FunctionInstance" 0;
+BA_DEF_DEF_  "NmJ1939Function" 0;
+BA_DEF_DEF_  "NmJ1939ECUInstance" 0;
+BA_DEF_DEF_  "NmJ1939AAC" 0;
+BA_DEF_DEF_  "NmStationAddress" 254;
+BA_DEF_DEF_  "GenMsgSendType" "noMsgSendType";
+BA_DEF_DEF_  "GenMsgRequestable" 1;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "SPN" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "ProtocolType" "J1939";
+BA_DEF_DEF_  "VFrameFormat" "J1939PG";
+BA_ "DBName" "PxDebug";
+BA_ "VFrameFormat" BO_ 1287 0;
+BA_ "VFrameFormat" BO_ 1286 0;
+BA_ "VFrameFormat" BO_ 291 0;
+BA_ "VFrameFormat" BO_ 1285 0;
+BA_ "VFrameFormat" BO_ 1284 0;
+BA_ "VFrameFormat" BO_ 1283 0;
+BA_ "VFrameFormat" BO_ 1282 0;
+VAL_ 1285 ln_4WS 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_EF 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_EMM 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_RG3 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_TA 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_SBL 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_WBZ 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_SCT 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_MI 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_ZE 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_Drive 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_ES 1 "ON" 0 "OFF" ;
+VAL_ 1285 ln_Dash 1 "ON" 0 "OFF" ;
+

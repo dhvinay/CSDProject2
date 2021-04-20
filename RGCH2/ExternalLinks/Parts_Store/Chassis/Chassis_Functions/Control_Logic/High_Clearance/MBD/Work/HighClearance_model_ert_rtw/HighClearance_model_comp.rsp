@@ -1,0 +1,8 @@
+-IC:\Dev\Chassis_Development\RGCH2\ExternalLinks\Parts_Store\Chassis\Chassis_Functions\Control_Logic\High_Clearance\MBD\Work
+-IC:\Dev\Chassis_Development\RGCH2\ExternalLinks\Parts_Store\Chassis\Chassis_Functions\Control_Logic\High_Clearance\MBD\Work\HighClearance_model_ert_rtw
+-I"C:\Program Files\MATLAB\R2019b\extern\include"
+-I"C:\Program Files\MATLAB\R2019b\simulink\include"
+-I"C:\Program Files\MATLAB\R2019b\rtw\c\src"
+-I"C:\Program Files\MATLAB\R2019b\rtw\c\src\ext_mode\common"
+-I"C:\Program Files\MATLAB\R2019b\rtw\c\ert"
+-IC:\Dev\Chassis_Development\RGCH2\ExternalLinks\Parts_Store\Chassis\Chassis_Functions\Control_Logic\High_Clearance\MBD\Work\slprj\ert\_sharedutils

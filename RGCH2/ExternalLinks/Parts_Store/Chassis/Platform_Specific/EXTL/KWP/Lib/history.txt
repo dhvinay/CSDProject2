@@ -1,0 +1,204 @@
+history.txt                    KWP Library                     AGCO GmbH - FENDT
+--------------------------------------------------------------------------------
+
+Version v0.41 (2018-04-06):
+===========================
+- [BUG-7915] - KWP-LIB Auslesen der Teilenummer funktioniert nur mit fixer länge, allerdings laut Spec Variable gefordert
+
+Version v0.40 (2016-11-04):
+===========================
+- [PB-14248] added objects kwp_ZE7R2 and kwp_FLB to agco cortex-m3 build.
+
+Version v0.39 (2016-09-19):
+===========================
+- [PB-13966] Enabled service for setting of ECU outputs for AGCO/OEM tricore builds.
+  Only kwp_tc1796AGC.a is affected.
+- [BUG-7710] Fixed bug in Service 0x1A/0x98. Service reported constantly service not supported.
+  Bug was introduced with version v0.36
+- [Misc] Fixed code sample for [PB-12073] for v.36. 
+  The right define for article number is KWP_AGCO_ORDNUM_HDR_STRING_LENGTH.
+
+Version v0.38 (2016-09-19):
+===========================
+- [PB-11734] Added IO table for FLB
+
+Version v0.37 (2016-05-11):
+===========================
+- [PB-11740] Added IO table for ZE7R2 (replacement for ZEL)
+
+Version v0.36 (2016-03-11):
+===========================
+- [PB-12073] Extended hwNumber_au8 field in KwpInit_ts for AGCO part/order number.
+  See code example below for necessary changes in application code:
+  // Read full length for G or AGCO order number (KWP task will check order number type)
+  if( EosEepromRead_s32(EEP_ADDR_HW_NUMBER_BYTE_10, &init_s.hwNumber_au8[0], KWP_AGCO_ORDNUM_HDR_STRING_LENGTH) )
+  {
+  	memset(init_s.hwNumber_au8, 0x00u, KWP_AGCO_ORDNUM_HDR_STRING_LENGTH);
+  }
+- [PB-11769] Increased stacks size for uC/OS-II for ARM7-TDMI-S targets from
+  512 to 660 bytes.
+- [PB-10481] changed define RTOS_PXROS in kpw.h to compiler define __tricore__.
+- [Misc] Deleted header file kwpx.h. Use kwp.h instead.
+
+Version v0.35 (2015-10-12):
+===========================
+- [PB-10481] replaced FreeRTOS by OsWrapper (MPU ready). 
+  KWP libraries for ARM (kwp_cm3*.a and kwp_lpc*.a) are now built with OsWrapper (µC/OS-II).
+  Replaced bool by boolean.
+
+Version v0.34 (2015-09-17):
+===========================
+- [PB-10741] Changed IO table for SRC14-34/31 C sample (Only Tricore builds are
+  affected).
+
+Version v0.33 (2015-05-07):
+===========================
+- [PB-9103] modified for ZEK LK3 HW-Rev 002
+
+Version v0.32 (2014-09-26):
+===========================
+- [PB-8552] Added IO table for SRC14-34/31 (new EXT light)
+- [PB-8555] Added IO group with DOPS_5V and DOPS_8V5 to
+  IO table of EXT and EXT-Light.
+- [Misc] Fixed some compiler warnings.
+
+Version v0.31 (2014-07-21):
+===========================
+- [PB-8019] 2nd: added new in/outputs for new MFC layout
+
+Version v0.30 (2014-07-09):
+===========================
+- [PB-8019] added new in/outputs for new MFC layout
+
+Version v0.29 (2014-06-25):
+===========================
+- [PB-7918] Added DFI input at ZEFH io-table
+
+Version v0.28 (2014-05-07):
+===========================
+- [PB-7804] added KWP-Lib target for AGCO Cortex-M3 (kwp_cm3AGC.a)
+
+Version v0.27 (2014-04-01):
+===========================
+- [PB-7481] added new in/outputs for ZEK LK2 HW-Rev 001
+
+Version v0.26 (2013-11-08):
+===========================
+- [PB-5539] Added IO table for MFC.
+
+Version v0.25 (2013-07-23):
+===========================
+- [PB-6276] replaced PxBcopy by memcopy
+- [PB-4117] Added IO table for ZEK LK1 and lib build for CortexM3.
+- [PB-4122] Prepared code for FreeRTOS (PxMsgInit()/Check()) and added
+  option USE_MSG_ENVELOPE (one mailbox for all messages).
+
+Version v0.24 (2013-04-15):
+===========================
+- [PB-5382] (SRC4/5) added new inputs to IO table (available since Core lib SRC4_5_ISOCAN_M20H8).
+
+Version v0.23 (2012-12-14):
+===========================
+- [PB-4979] Added IO table for EBK.
+- [PB-4983] Reduced task priority from 2 to 13. KWP task doesn't need
+  a high priority and especially for KWP services like read by identifier
+  it's better that the application tasks has a higher priority.
+- [Misc] Use latest include folder from ARM and Tricore EOS.
+
+Version v0.22 (2012-10-24):
+===========================
+- [PB-4249] Enable EXTENDED_DIAG for Fendt Tricore builds (not AGCO/OEM).
+  Add code to application project to take care of diagnostic mode. If extended
+  diagnostic mode is active it's the responsibility of application programmer
+  to avoid concurrent access to ios by KWP protocol/application tasks and or
+  possible safety issues. Status of diagnostic mode can be determined by function
+  isKwpExtendedDiagMode_b(void).
+- [PB-4142] Extended I/O table for new RDRA block (new analog inputs).
+- Notice: Eos with functions EosOutGetSt2_s32() and EosTiGetSt_s32() is required.
+
+Version v0.21 (2012-06-21):
+===========================
+- Added SRC4_5 and SRC36_20_31 I/O tables.
+- Added KWP_FEATURE_VOLTAGE to diagOutput_u8() using EosOutGetSt2_s32().
+
+Version v0.20 (2011-10-20):
+===========================
+- New interface functions allowing application tasks to receive and parse
+  KWP-Messages [PB-1705]
+- Added Doxygen documentation
+
+Version v0.12 (2011-07-28):
+===========================
+- Changed IO table for ZEFH LK6 hardware revision 0.1.
+- Build was only done for ARM.
+
+Version v0.11 (2011-03-30):
+==========================
+- Funktion zum Abfragen des Speichertestergebnis aufgenommen. Der Bootloader
+  fuehrt den Speichertest durch und schreibt das Ergebnis in die IRAM-Struktur.
+- Neuer Tricorecompiler 3.4.7.3 verwendet.
+- Nur Build fuer Tricore.
+- Shutdown wird jetzt auch fuer Tricore verwendet (wie ARM Version 0.10).
+
+Version v0.10 (2011-01-12):
+==========================
+- Added io group table for ZEFH for forage harvester.
+- Added code to check if shutdown is possible and replaced reset
+  command with a shutdown function call. This code needs a EOS
+  library that supports the shutdown.
+- Only ARM library was built (lpc) for this version.
+
+Version v0.08 (2010-11-30):
+==========================
+- Workaround bzgl. Cash Problem in LPC Bibliothek entfernt
+- in Bibliothek fuer TC1796 kann auch Bootloaderversion angefragt werden
+- EXTL: auch die Digitalausgaenge koennen Pulsweitenverhaeltnis anzeigen
+
+Version v0.07 (2010-10-08):
+==========================
+- Parameter dutycycle_u16 fuer Frequenzeingaenge hinzugefuegt (Bibliothek LPC)
+
+Version v0.06 (2010-10-06):
+==========================
+- Ausgaenge fuer Hauptrelais und externe Versorgungsspannungen (EXT/EXT-Light)
+- fuer EXT gegen neues EOS compiliert (iosymbext.h)
+- in Bibliothek fuer LPC Signalausgang fuer Kupplungklimakompressor hinzugefuegt
+
+Version v0.05 (2010-07-15):
+==========================
+- bei Frequenzeingangen die Pulsweite [%] anzeigen (nur Bibliothek TC1796)
+- Bibliothek fuer LPC um Baugruppe MRC erweitert
+- in Bibliothek LPC das Array fuer Inhalt der Botschaften auf 1k verkleinert
+
+Version v0.04 (2010-03-29):
+==========================
+- Wert IOD_Undef aus enum IODiag_te entfernt (EOS)
+- neues Layout fuer Baugruppe ZEL (C-Muster)
+
+Version v0.03 (2010-03-10):
+==========================
+- Bibliothek fuer LPC um Baugruppe MFA erweitert
+
+Version v0.02 (2009-12-11):
+==========================
+- Nur noch eine Bibliothek fuer alle Baugruppen mit LPC
+  und eine Bibliothek fuer alle Baugruppen mit TC1796
+  (fuer TC1796 ist neue Bibliothek erforderlich)
+- KWP-Task wird mit Parametern initialisiert
+- Baugruppenbeschreibungen in eigenen Dateien
+- While-Schleife beim einlesen der CAN-Botschaften (statt More-Flag)
+
+Version v0.01 (2009-11-11):
+==========================
+- Compilerflags -O2 (Optimierung) und -fshort-enums (nur ARM)
+- EEPROM Download nur noch im Bootloader moeglich
+- Angabe der Arraygroesse fuer die "read" Funktionen (EMM)
+- Loeschen der Fehler-Haeufigkeitszaehler implementiert
+  (Service 0x31; SubID 0x14; nur mit Seed&Key (MLSA))
+
+Version v0.00 (2009-09-28):
+==========================
+- Bibliotheken fuer Baugruppen mit LPC des X711 und EXT-Light fuer OEM erstellt
+
+--------------------------------------------------------------------------------
+history.txt                    KWP Library                     AGCO GmbH - FENDT

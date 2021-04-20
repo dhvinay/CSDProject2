@@ -1,0 +1,116 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   14 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "is_active_c2_HighClearance_model"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_c2_HighClearance_model"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_calCommanded"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "calCommanded"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "calCommanded.active"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_step3"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "calCommanded.active.step3"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "calCommanded.active.step3.active"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_step4"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "calCommanded.active.step4"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_step2"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "calCommanded.active.step2"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_step1"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "calCommanded.active.step1"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "calCommanded.active.step1.active"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i2"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "calCmd_prev"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "calCmd"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "calCmd_start"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "calCmd"\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

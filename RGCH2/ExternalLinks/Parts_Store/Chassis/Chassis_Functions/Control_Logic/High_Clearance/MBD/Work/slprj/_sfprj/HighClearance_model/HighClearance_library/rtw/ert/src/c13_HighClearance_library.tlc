@@ -1,0 +1,123 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   15 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "is_active_c13_HighClearance_library"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_c13_HighClearance_library"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_states"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "errorChecking.movmentError.states"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_expectedToMove"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "errorChecking.movmentError.states.expectedToMove"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_notExpectedToMove"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "errorChecking.movmentError.states.notExpectedToMove"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_positionSensorError"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "errorChecking.positionSensorError"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_error"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "errorChecking.positionSensorError.error"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_errorWithNoCmdStep1"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "errorWithNoCmdStep1"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "pwmIn_rt_prev"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "pwmIn_rt"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "pwmIn_rt_start"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "pwmIn_rt"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "pwmIn_ex_prev"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "pwmIn_ex"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "pwmIn_ex_start"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "pwmIn_ex"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "targetState_prev"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "targetState"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "targetState_start"\
+      Description  "ChangeDetectionDoubleBuffer"\
+      SFName       ""\
+      Path         "targetState"\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

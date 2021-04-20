@@ -1,0 +1,408 @@
+History file for SRC14-34/31  Eoslib
+====================================
+
+2014-10-14 Release SRC14_34_31.1.0.1.0.0
+========================================
+
+[PB-8563] Initial release for SRC14_34_31.
+[PB-8560] Added support for DSM sensor frequency inputs.
+[PB-8565] Added support for lowside led drivers.
+[PB-8756] New io class for DI_XX with switchable pullup.
+[PB-8593] Improved diagnostic code for DI_XX and DFI_XX.
+Voltage is measured before overvoltage protection diode
+therefore shortcircuit to VCC and open can be distinguished.
+
+Public:
+-------
+[PB-8563] New ECU SRC14_34_31 (successor of EXTLT/SRC9_34).
+[PB-8602] New functions eosDiGetSt2_s32() and eosDfiGetSt2_s32() to
+get voltage with latest available ADC value.
+[PB-5211] New functions eosDfiEnablePhaseDep_s32() and eosDfiDisablePhaseDep_s32()
+for phase measuring between two DFIs (if supported by ECU/Bosch core).
+[PB-8560] New function eosDfiDsmLoadResEnable_s32() to enable DSM load
+resistor for DSM inputs. New function eosDfiGetSt2_s32() which returns
+period time (DSM).
+[PB-8591] New function eosOutSetMultiplePw_s32() to set multiple outputs with
+one call (only one rtos message is used).
+[PB-5253] Moved can functions to own header file. New functions
+eosCanSendBufferFreeCnt_s32() and eosCanState_e().
+- include/eosCan.h
+[PB-8554] IO symbols file for SRC14-34/31.
+- include/iosymbSRC14_34_31.h
+Removed declaration of function CreateStdTask() from stdtask.h because
+this function should only be used by EOS tasks.
+- include/stdtask.h
+
+Eoslibs:
+--------
+
+SRC14_34_31:    libeosSRC14_34_31.a         - without pxros monitor
+                libeosSRC14_34_31_pxdbg.a   - with pxros monitor
+
+External Code/Libs:
+-------------------
+Toolchain (Compiler):       V3.4.7.3
+PXROS:                      V3.4.7.3
+BoschCore:                  SRC14_34_31_M20K1
+
+
+2015-07-03 Release SRC14_34_31.1.0.2.0.0
+========================================
+
+[PB-9026] handle all CAN busses with a single task.
+[PB-9111] Fixed interface for current controller ISR (Fendt only).
+[PB-8554] Changed output properties for POH_09/POH_10 (now with pullup) and 
+PDOH_18/19/20/21 (now without pullup).
+[PB-8563] Moved some function specific declarations from eos.h to own header files.
+[PB-9026] handle all CAN busses with a single task and new function to receive can messages
+with message id structure/envelope.
+[PB-9598] Added functions for CRC32 calculation with Tricore memchecker device (eosMngmt.h)
+[BUG-5531] Added functions eosDfiStart_s32() and eosDfiStartAll_s32() to start measuring of 
+frequency and pulscounter from application.
+NOTE: Startup configuration for DFIs is disabled. To enable all DFIs
+call eosDfiStartAll_s32() prior to application task start.
+
+Public:
+-------
+[PB-9026] declared stdtask.h as deprecated, replaced by new eosRtos.h
+-include/stdtask.h
+-include/eosRtos.h
+
+[PB-9598] Added functions for CRC32 calculation with Tricore memchecker device (eosMngmt.h)
+-include/eosMngmt.h
+
+[PB-9026] added message envelope functionality to CAN task
+-include/eosCan.h
+-include/eosRtos.h
+
+New IO-API functions eosDfiStart_s32() and eosDfiStartAll_s32().
+- include/eos.h
+
+[PB-8563] Splitted eos.h in function specific header files.
+- include/eosEep.h
+- include/eosIgn.h
+- include/eosWd.h
+
+Eoslibs:
+--------
+
+SRC14_34_31:    libeosSRC14_34_31.a         - without pxros monitor
+                libeosSRC14_34_31_pxdbg.a   - with pxros monitor
+
+External Code/Libs:
+-------------------
+Toolchain (Compiler):       V3.4.7.3
+PXROS:                      V3.4.7.3
+BoschCore:                  SRC14_34_31_M20K1
+
+Internal:
+---------
+[PB-9026] declared stdtask.h as deprecated, replaced by new header eosRtos.h
+-include/stdtask.h
+-include/eosRtos.h
+
+[PB-9026] added message envelope functionality to CAN task
+-include/eosCan.h
+
+[PB-9026] handle all CAN busses with a single task.
+Added message envelope functionality to CAN task.
+-module/can_cantl.h
+-module/can_task.c
+-module/can_triBoCo.c
+
+[PB-9110] Improved processing time by direct access to adc array with
+pointer stored in output description table.
+- module/adcSwFilter.c
+- module/adcSwFilter.h
+- module/io_boCo.c
+- module/io_boCo.h
+- module/SRC14_34_31/dfi_config.c
+- module/SRC14_34_31/inphwdef.h
+- module/SRC14_34_31/pcpTemp.h
+- module/SRC14_34_31/outhwdef.h
+
+[PB-8563] Moved files dfi_boCoEna.c, dfi_boCoEna.h from ECU specific folder
+to common folder because now the feature is used by all ECUs.
+- module/dfi_boCoEna.c
+- module/dfi_boCoEna.h
+- module/tc_iocrUtil.c
+- module/tc_iocrUtil.h
+
+[PB-8563] Rework of input and output functions for SRC14_34/31.
+- module/io_input.c
+- module/io_input.h
+- module/io_output.h
+- module/io_output.c
+- module/io_pcbTempSens.c
+- module/io_pcbTempSens.h
+- module/io_task.c
+
+[PB-9598] Added functions for CRC32 calculation with Tricore memchecker device (eosMngmt.h)
+- module/mchk_tc.c
+- module/mchk_tc.h
+- module/wd_task.c
+- module/SRC14_34_31/intrSRC14_34_31.c
+- module/SRC14_34_31/irq_prio.h
+
+[Misc] Added actual addresse for idle task stack (Pxros monitor)
+- module/stdinit.c
+
+[PB-9111] Fixed interface for current controller ISR (Fendt only) and removed
+POL_1 from average filtering.
+- module/SRC14_34_31/pwmoutputinstall.c
+- module/SRC14_34_31/eosHndOutp.c
+- module/SRC14_34_31/boardinitSRC14_34_31.c
+- module/SRC14_34_31/adcSwFilterTableSRC14_34_31.c
+- module/SRC14_34_31/coreinit_SRC14_34_31.c
+
+[PB-8554] Changed output properties for POH_09/POH_10 (now with pullup) and 
+PDOH_18/19/20/21 (now without pullup).
+- module/SRC14_34_31/outhwdef.h
+
+[PB-8563] Replaced define EXT_LIGHT with SRC9_34 and also replaced 
+RTOS specific PxTickGetCount() by eosGetSysUptimeInMs_u32().
+- module/ecuHwRev.c
+
+[Misc] Improved comments in eep taks for doxygen.
+- module/eep_task.c
+
+
+2015-09-17 Release SRC14_34_31.1.0.3.0.0
+========================================
+
+[PB-10268] Io tables for C sample (HwRev 330) and new core M20K13
+Added DOH_XX, PDOH_XX and DOL_XX outputs to filter list.
+DOH_xx outputs now support current measuring.
+Improved diagnostic for DOL_1-5 LED driver outputs
+[PB-9110] Use filtered adc values for POH_XX and POL_02-05 current measurment
+instead of bosch core adc arrays. Filtering was removed with previous release
+
+Public:
+-------
+
+New analog input AI_VSS3. New pinning for outputs.
+- include/iosymbSRC14_34_31.h
+
+Eoslibs:
+--------
+
+SRC14_34_31:    libeosSRC14_34_31.a         - without pxros monitor
+                libeosSRC14_34_31_pxdbg.a   - with pxros monitor
+
+External Code/Libs:
+-------------------
+Toolchain (Compiler):       V3.4.7.3
+PXROS:                      V3.4.7.3
+BoschCore:                  SRC14_34_31_M20K13
+
+Internal:
+---------
+[PB-10268] Added outputs DOH_XX, PDOH_XX and DOL_XX outputs to filter list.
+- module/SRC14_34_31/adcSwFilterTableSRC14_34_31.c
+[PB-10268] Added analog input AI_VSS3 and changed load resistor value
+for current inputs from 200 to 199.5 Ohm(C-sample). Changed some divider values.
+Changed properties of outputs for C-sample.
+- module/SRC14_34_31/inphwdef.c
+- module/SRC14_34_31/outhwdef.h
+
+[PB-9110] Use filtered adc values for POH_XX and POL_02-05 current measurment
+instead of bosch core adc arrays.
+- module/io_output.c
+- module/SRC14_34_31/outhwdef.h
+
+[PB-10268] Improved diagnostic for OCOLL LED driver.
+- module/io_output.c
+
+
+2015-10-20 Release SRC14_34_31.1.0.4.0.0
+========================================
+
+[BUG-6863] Core release SRC14_34_31_M20K16 from Bosch with synchronized ADCs
+for C-sample (HwRev >= 330).
+
+Public:
+-------
+
+na
+
+Eoslibs:
+--------
+
+SRC14_34_31:    libeosSRC14_34_31.a         - without pxros monitor
+                libeosSRC14_34_31_pxdbg.a   - with pxros monitor
+
+External Code/Libs:
+-------------------
+Toolchain (Compiler):       V3.4.7.3
+PXROS:                      V3.4.7.3
+BoschCore:                  SRC14_34_31_M20K16
+
+Internal:
+---------
+na
+
+
+2016-01-19 Release SRC14_34_31.1.0.5.0.0
+========================================
+
+[BUG-6991] Reduced lower limit frequency of core from 1.2 Hz for DCM/LTC and 0.8 for
+GTC/isr frequency inputs to 0.6 Hz with software solution.
+
+Public:
+-------
+
+[Misc] Current output now accepts zero as setvalue to turn it completely off.
+
+Eoslibs:
+--------
+
+SRC14_34_31:    libeosSRC14_34_31.a         - without pxros monitor
+                libeosSRC14_34_31_pxdbg.a   - with pxros monitor
+
+External Code/Libs:
+-------------------
+Toolchain (Compiler):       V3.4.7.3
+PXROS:                      V3.4.7.3
+BoschCore:                  SRC14_34_31_M20K16
+
+Internal:
+---------
+[BUG-6991] Reduced lower limit frequency of core from 1.2 Hz for DCM/LTC and 0.8 for
+GTC/isr frequency inputs to 0.6 Hz with software solution.
+- Module/io_input.c
+- Module/SRC14_34_31/inphwdef.h
+- Module/SRC14_34_31/options.h
+
+[Misc] Changed initial value for current output. Current output is turned off at
+init and also API was changed to accept 0 for setvalue (turn it off).
+- Module/io_output.c
+
+
+2016-05-09 Release SRC14_34_31.1.0.6.0.0
+========================================
+
+[PB-12141] Coreupdate from M20K16 to M20K21:
+Reduced time for Cy327 external watchdog (from 40ms+4ms to 20.8ms+4ms).
+Enabled phase measuring feature.
+
+Public:
+-------
+Added comments for phase measuring.
+- include/iosymbSRC14_34_31.h
+Added pxpe.h header file to includes
+- include/eosRtos.h
+
+Eoslibs:
+-------- 
+
+SRC14_34_31:    libeosSRC14_34_31.a         - without pxros monitor
+                libeosSRC14_34_31_pxdbg.a   - with pxros monitor
+                
+External Code/Libs:
+-------------------
+Toolchain (Compiler):       V3.4.7.3
+PXROS:                      V3.4.7.3
+BoschCore:                  SRC14_34_31_M20K21
+
+Internal:
+---------
+
+[PB-12141] Reduced time window for external watchdog (Cy327) from 40+4ms to 20.8+4ms.
+- Module/extWdCy320.c
+- Module/SRC14_34_31/options.h
+
+[PB-12141] Added isr prios for ADCMUX conversion done.
+- Module/SRC14_34_31/irq_prio.h
+- Module/SRC14_34_31/intrSRC14_34_31.c
+
+[PB-12141] Added call to Phase_PwmIn_Proc_Ini().
+- Module/SRC14_34_31/coreinit_SRC14_34_31.c
+
+[Misc] Check if measured voltage of NTC is below ADC referencec voltage
+to avoid division by zero.
+- Module/io_pcbTempSens.c
+
+
+2016-10-11 Release SRC14_34_31.1.0.7.0.0
+========================================
+[BUG-7726] Fixed wrong eep size 128kB back to 32kB caused by wrong number of pages.
+[PB-14197] Increase limit for CI_XX input open/ScGnd detection from 2 mA to 2.72 mA.
+[Misc] Reduced define for minimum adjustable PWM frequency from 50 to 40 Hz.
+
+Public:
+-------
+Reduced define for minimum adjustable PWM frequency from 50 to 40 Hz.
+- include/Eos.h
+
+Eoslibs:
+-------- 
+SRC14_34_31:    libeosSRC14_34_31.a         - without pxros monitor
+                libeosSRC14_34_31_pxdbg.a   - with pxros monitor
+                
+External Code/Libs:
+-------------------
+Toolchain (Compiler):       V3.4.7.3
+PXROS:                      V3.4.7.3
+BoschCore:                  SRC14_34_31_M20K21
+
+Internal:
+---------
+[BUG-7726] Fixed wrong eep size by setting right number of pages for pages size of
+128 bytes instead of usual 32 bytes.
+- Module/SRC36_20_31/options.h
+
+[PB-14197] Increase limit for CI_XX input open/ScGnd detection from 2 mA to 2.72 mA.
+- Module/SRC36_20_31/inphwdef.h
+
+
+2017-02-13 Release SRC14_34_31.1.0.8.0.0
+========================================
+
+[PB-14761] New sensors with long startup time (230ms) requires new functions for 
+resetting of debounced diagnostic code and diagnostic debounce counter. 
+Added functions eosIoDiagResetAll_s32(), eosIoDiagOutReset_s32(),
+eosIoDiagInpDigReset_s32() eosIoDiagInpAnaReset_s32().
+Removed function EosInputResetDiags_s32(). Calling functions EosDiSetConfig_s32(),
+EosAiSetConfig_s32() and EosOutSetPara_s32() will reset diagnostic code (OK) and
+diagnostic counters.
+[PB-14762] Turnoff all sensor power supplies during io init. Due to functions eosDfiStart.. it's no longer
+required to turn on sensor supplies during core init.
+[Misc] Changed some doxygen tags for update of doxygen.
+
+Public:
+-------
+New functions and changed functionality:
+eosIoDiagResetAll_s32(), eosIoDiagOutReset_s32(), eosIoDiagInpDigReset_s32(), eosIoDiagInpAnaReset_s32( EosAiName_te aiName_e ).
+EosDiSetConfig_s32(), EosDfiSetConfig_s32(), EosAiSetConfig_s32(), EosOutSetPara_s32()
+- include/Eos.h
+
+Eoslibs:
+-------- 
+SRC14_34_31:    libeosSRC14_34_31.a         - without pxros monitor
+                libeosSRC14_34_31_pxdbg.a   - with pxros monitor
+                
+External Code/Libs:
+-------------------
+Toolchain (Compiler):       V3.4.7.3
+PXROS:                      V3.4.7.3
+BoschCore:                  SRC14_34_31_M20K21
+
+Internal:
+---------
+[PB-14761] Added functions eosIoDiagResetAll_s32(), eosIoDiagOutReset_s32(),
+eosIoDiagInpDigReset_s32() eosIoDiagInpAnaReset_s32( ).
+Removed function EosInputResetDiags_s32(). Calling functions EosDiSetConfig_s32(),
+EosAiSetConfig_s32() and EosOutSetPara_s32() will reset diagnostic code (OK) and
+diagnostic counters.
+- include/Eos.h
+- Module/io_task.h
+- Module/io_task.c
+- Module/io_input.h
+- Module/io_input.c
+- Module/io_output.h
+- Module/io_output.c
+
+ [PB-14762] Turn off all SWITCHABLE_VOLTREG in ioOuputInit(). Keeping voltage supplies on is no longer
+ necessary due to dfiStart functions.
+ - Module/io_output.c
+ - Module/SRC36_20_31/coreinit_SRC36_20_31.c
